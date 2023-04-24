@@ -42,12 +42,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
     private fun getViewModel(): NoteViewModel {
-
         return ViewModelProvider(this).get(NoteViewModel::class.java)
     }
-
     fun submitData(view: View) {
         val noteText = binding.input.text.toString()
 
@@ -55,9 +52,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.insertNote(Note(noteText))
             Toast.makeText(this,"$noteText Submitted Successfully", Toast.LENGTH_SHORT).show()
         }
-
     }
-
     fun onItemClicked(note: Note) {
         viewModel.deleteNote(note)
         Toast.makeText(this,"${note.text} Deleted", Toast.LENGTH_SHORT).show()

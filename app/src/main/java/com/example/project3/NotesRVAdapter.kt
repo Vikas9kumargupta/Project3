@@ -9,7 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 
-class NotesRVAdapter(private val context: Context, private val listener: MainActivity) : RecyclerView.Adapter<NotesRVAdapter.NoteViewHolder>() {
+class NotesRVAdapter(private val context: Context, private val listener: MainActivity) :
+    RecyclerView.Adapter<NotesRVAdapter.NoteViewHolder>() {
 
     private val allNotes = ArrayList<Note>()
 
@@ -25,23 +26,19 @@ class NotesRVAdapter(private val context: Context, private val listener: MainAct
         }
         return viewHolder
     }
-
     override fun getItemCount(): Int {
         return allNotes.size
     }
-
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentNote = allNotes[position]
         holder.textView.text = currentNote.text
     }
-
     fun updateList(newList: List<Note>) {
         allNotes.clear()
         allNotes.addAll(newList)
         notifyDataSetChanged()
     }
 }
-
 interface INotesRVAdapter {
     fun onItemClicked(note: Note)
 }

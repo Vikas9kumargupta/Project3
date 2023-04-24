@@ -19,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/deleteButton"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/vikas" />
+        />
 
     <ImageView
         android:id="@+id/deleteButton"
